@@ -7,14 +7,13 @@ import {
   Sparkles,
   Wallet,
 } from "lucide-react";
-import { Shell } from "@/components/layout/tripflow";
+
 import { TravelIntelligenceForm } from "@/components/plan-trip/travel-intelligence-form";
 import { Suspense } from "react";
 
 export default function Page() {
   return (
-    <Shell>
-      <main className="bg-[#f7f4ed] px-5 py-12 lg:px-8">
+    <main className="bg-[#f7f4ed] px-5 py-12 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <section className="grid items-start gap-10 lg:grid-cols-[.78fr_1.22fr]">
             <div className="lg:sticky lg:top-28">
@@ -63,6 +62,5 @@ export default function Page() {
           </section>
         </div>
       </main>
-    </Shell>
   );
 }

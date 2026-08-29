@@ -1,10 +1,9 @@
-import { Shell } from "@/components/layout/tripflow";
+
 import { FoodExperience } from "@/components/food/food-explorer";
 import { Flame, MapPin, Sparkles, Utensils } from "lucide-react";
 export default function Food() {
   return (
-    <Shell>
-      <main className="min-h-screen bg-[#f7f4ed] px-5 py-10 lg:px-8">
+    <main className="min-h-screen bg-[#f7f4ed] px-5 py-10 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <section className="tf-hero-panel relative overflow-hidden rounded-[2rem] bg-[#431f17] px-6 py-10 text-white sm:px-10">
             <div className="tf-orbit opacity-30" />
@@ -39,6 +38,5 @@ export default function Food() {
           <FoodExperience />
         </div>
       </main>
-    </Shell>
   );
 }

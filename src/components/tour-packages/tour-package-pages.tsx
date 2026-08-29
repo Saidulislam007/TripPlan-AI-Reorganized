@@ -4,13 +4,13 @@ import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 import {
   ArrowRight,
-  BadgeCheck,
+  
   BedDouble,
   Bus,
   CalendarDays,
   Check,
   CheckCircle2,
-  ChevronRight,
+ 
   CircleHelp,
   Clock3,
   Download,
@@ -20,12 +20,12 @@ import {
   Phone,
   Plus,
   Search,
-  Share2,
+  
   ShieldCheck,
   Sparkles,
   Star,
   TicketCheck,
-  TrainFront,
+  
   Users,
   Utensils,
   WalletCards,
