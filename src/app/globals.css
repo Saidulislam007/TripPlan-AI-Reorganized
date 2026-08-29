@@ -1,0 +1,250 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+:root {
+  --background: #f7f4ed;
+  --foreground: #173d35;
+  --card: #fff;
+  --card-foreground: #173d35;
+  --popover: #fff;
+  --popover-foreground: #173d35;
+  --primary: #123f36;
+  --primary-foreground: #fff;
+  --secondary: #e8eee9;
+  --secondary-foreground: #173d35;
+  --muted: #edeae2;
+  --muted-foreground: #687a73;
+  --accent: #f2e2c2;
+  --accent-foreground: #173d35;
+  --destructive: #c43b3b;
+  --border: #ddd8cc;
+  --input: #d7d3c8;
+  --ring: #d88a1e;
+  --radius: 0.75rem;
+}
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+}
+* {
+  border-color: var(--border);
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+button,
+a {
+  cursor: pointer;
+}
+
+/* TripFlow depth & motion system */
+.tf-scene {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+.tf-hero-bg {
+  animation: hero-breathe 16s ease-in-out infinite alternate;
+  will-change: transform;
+}
+.tf-float-card {
+  transform-style: preserve-3d;
+  animation: card-float 6s ease-in-out infinite;
+  box-shadow:
+    0 34px 80px rgba(3, 27, 22, 0.32),
+    0 2px 0 rgba(255, 255, 255, 0.7) inset;
+}
+.tf-float-card > * {
+  transform: translateZ(24px);
+}
+.tf-tilt-card,
+.tf-day-card,
+.tf-form-3d,
+.tf-hero-panel {
+  transform-style: preserve-3d;
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.45s ease,
+    border-color 0.3s ease;
+  will-change: transform;
+}
+.tf-tilt-card:hover {
+  transform: perspective(900px) rotateX(4deg) rotateY(-4deg) translateY(-8px);
+  box-shadow: 20px 26px 55px rgba(18, 63, 54, 0.16);
+  border-color: rgba(199, 124, 25, 0.45);
+}
+.tf-day-card:hover {
+  transform: perspective(1200px) rotateX(1.5deg) translateY(-5px);
+  box-shadow: 0 24px 55px rgba(18, 63, 54, 0.12);
+}
+.tf-form-3d {
+  box-shadow:
+    0 35px 90px rgba(18, 63, 54, 0.15),
+    0 2px 0 white inset;
+  transform: perspective(1400px) rotateY(-1.5deg);
+}
+.tf-form-3d:focus-within {
+  transform: perspective(1400px) rotateY(0deg) translateY(-4px);
+  box-shadow:
+    0 42px 100px rgba(18, 63, 54, 0.2),
+    0 2px 0 white inset;
+}
+.tf-hero-panel {
+  box-shadow: 0 32px 80px rgba(4, 34, 28, 0.22);
+  animation: panel-rise 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.tf-orbit {
+  position: absolute;
+  right: 5%;
+  top: 14%;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 50%;
+  transform: rotateX(66deg) rotateZ(-12deg);
+  animation: orbit-spin 12s linear infinite;
+  pointer-events: none;
+}
+.tf-orbit:before,
+.tf-orbit:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+.tf-orbit:before {
+  width: 20px;
+  height: 20px;
+  background: #e9a63a;
+  box-shadow: 0 0 35px #e9a63a;
+  left: 8px;
+  top: 64px;
+}
+.tf-orbit:after {
+  inset: 40px;
+  border: 1px dashed rgba(255, 255, 255, 0.32);
+}
+.tf-route-plane {
+  position: absolute;
+  right: 15%;
+  top: 23%;
+  color: #efb24d;
+  filter: drop-shadow(0 14px 12px rgba(0, 0, 0, 0.3));
+  animation: plane-drift 5s ease-in-out infinite;
+  pointer-events: none;
+}
+.tf-enter {
+  animation: soft-enter 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@keyframes hero-breathe {
+  from {
+    transform: scale(1.02) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.1) translate3d(-1.5%, 1%, 0);
+  }
+}
+@keyframes card-float {
+  0%,
+  100% {
+    transform: perspective(1000px) rotateY(-4deg) rotateX(2deg) translateY(0);
+  }
+  50% {
+    transform: perspective(1000px) rotateY(-1deg) rotateX(0) translateY(-14px);
+  }
+}
+@keyframes orbit-spin {
+  to {
+    transform: rotateX(66deg) rotateZ(348deg);
+  }
+}
+@keyframes plane-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 50px) rotate(-12deg);
+  }
+  50% {
+    transform: translate3d(28px, -18px, 80px) rotate(-5deg);
+  }
+}
+@keyframes panel-rise {
+  from {
+    opacity: 0;
+    transform: perspective(1200px) rotateX(5deg) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes soft-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 767px) {
+  .tf-float-card,
+  .tf-form-3d {
+    animation: none;
+    transform: none;
+  }
+  .tf-orbit {
+    width: 170px;
+    height: 170px;
+    right: -50px;
+    top: 9%;
+  }
+  .tf-route-plane {
+    right: 9%;
+    top: 15%;
+  }
+  .tf-tilt-card:hover,
+  .tf-day-card:hover {
+    transform: translateY(-3px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  .tf-float-card,
+  .tf-form-3d,
+  .tf-tilt-card,
+  .tf-day-card {
+    transform: none !important;
+  }
+}
