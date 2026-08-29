@@ -1,7 +1,8 @@
 "use client";
-import { DayCards, Shell } from "@/components/layout/tripflow";
+
 import { Button } from "@/components/ui/button";
 import { useSearchParams } from "next/navigation";
+import { DayCards } from "@/components/itinerary/day-cards";
 import { Suspense } from "react";
 import {
   Download,
@@ -32,8 +33,7 @@ function ItineraryContent() {
   const budget = Math.max(Number(params.get("budget")) || 25000, 1000);
   const money = (n: number) => `৳${Math.round(n).toLocaleString("en-BD")}`;
   return (
-    <Shell>
-      <main className="min-h-screen bg-[#f7f4ed] px-5 py-10 lg:px-8">
+    <main className="min-h-screen bg-[#f7f4ed] px-5 py-10 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <div className="tf-hero-panel rounded-[2rem] bg-[#123f36] p-6 text-white sm:p-10">
             <div className="flex flex-col justify-between gap-7 md:flex-row">
@@ -114,6 +114,5 @@ function ItineraryContent() {
           </div>
         </div>
       </main>
-    </Shell>
   );
 }

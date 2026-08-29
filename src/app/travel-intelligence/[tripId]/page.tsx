@@ -19,7 +19,7 @@ import {
   Utensils,
   Wallet,
 } from "lucide-react";
-import { Shell } from "@/components/layout/tripflow";
+
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 
@@ -117,8 +117,7 @@ export default async function Page({
   ];
   const duration = Math.min(Number(q.days) || 4, days.length);
   return (
-    <Shell>
-      <main className="bg-[#f7f4ed] px-5 py-10 lg:px-8">
+    <main className="bg-[#f7f4ed] px-5 py-10 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <Link
             href="/travel-intelligence"
@@ -376,6 +375,5 @@ export default async function Page({
           </section>
         </div>
       </main>
-    </Shell>
   );
 }

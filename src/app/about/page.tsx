@@ -10,7 +10,7 @@ import {
   Users,
   WalletCards,
 } from "lucide-react";
-import { Shell } from "@/components/layout/tripflow";
+
 import { Button } from "@/components/ui/button";
 
 const problems = [
@@ -45,8 +45,7 @@ const promises = [
 
 export default function AboutPage() {
   return (
-    <Shell>
-      <main className="overflow-hidden bg-[#f7f4ed] text-[#123f36]">
+    <main className="overflow-hidden bg-[#f7f4ed] text-[#123f36]">
         <section className="relative isolate min-h-[680px] overflow-hidden">
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,39,32,.96)_0%,rgba(7,39,32,.78)_52%,rgba(7,39,32,.28)_100%),url('https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=2000&q=85')] bg-cover bg-center" />
           <div className="absolute -left-28 top-24 size-80 rounded-full border border-white/10" />
@@ -237,6 +236,5 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-    </Shell>
   );
 }
