@@ -1,10 +1,9 @@
-import { Shell } from "@/components/layout/tripflow";
+
 import { PlaceExplorer } from "@/components/destinations/place-explorer";
 import { Compass, Map, MapPin } from "lucide-react";
 export default function ExploreBangladesh() {
   return (
-    <Shell>
-      <main className="min-h-screen bg-[#f7f4ed] px-5 py-12 lg:px-8">
+    <main className="min-h-screen bg-[#f7f4ed] px-5 py-12 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <section className="tf-hero-panel relative overflow-hidden rounded-[2rem] bg-[#123f36] px-6 py-12 text-white sm:px-10">
             <div className="tf-orbit opacity-50" />
@@ -26,6 +25,5 @@ export default function ExploreBangladesh() {
           <PlaceExplorer />
         </div>
       </main>
-    </Shell>
   );
 }

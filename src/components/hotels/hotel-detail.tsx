@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
-import { hotelBySlug, hotels, totalPrice } from "@/lib/hotels";
+import { hotelBySlug, totalPrice } from "@/lib/hotels";
 import { Button } from "@/components/ui/button";
 import {
   ArrowLeft,

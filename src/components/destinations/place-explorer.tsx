@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { MapPin, ArrowRight, Compass } from "lucide-react";
+import { MapPin, ArrowRight } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { divisions, places } from "@/lib/places";
 export function PlaceExplorer() {
