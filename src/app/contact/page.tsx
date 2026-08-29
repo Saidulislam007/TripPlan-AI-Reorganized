@@ -16,7 +16,7 @@ import {
   ShieldAlert,
   Sparkles,
 } from "lucide-react";
-import { Shell } from "@/components/layout/tripflow";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -57,8 +57,7 @@ export default function ContactPage() {
   }
 
   return (
-    <Shell>
-      <main className="bg-[#f7f4ed] text-[#123f36]">
+    <main className="bg-[#f7f4ed] text-[#123f36]">
         <section className="relative isolate overflow-hidden bg-[#123f36] px-5 py-20 text-white lg:px-8 lg:py-28">
           <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(18,63,54,.97),rgba(18,63,54,.78)),url('https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=2000&q=85')] bg-cover bg-center" />
           <div className="absolute -right-24 -top-24 size-80 rounded-full border border-white/10" />
@@ -270,6 +269,5 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
-    </Shell>
   );
 }

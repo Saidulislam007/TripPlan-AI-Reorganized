@@ -1,10 +1,9 @@
-import { Shell } from "@/components/layout/tripflow";
+
 import { HotelExplorer } from "@/components/hotels/hotel-explorer";
 import { BedDouble, MapPin, ShieldCheck, Sparkles } from "lucide-react";
 export default function Hotels() {
   return (
-    <Shell>
-      <main className="min-h-screen bg-[#f7f4ed] px-5 py-10 lg:px-8">
+    <main className="min-h-screen bg-[#f7f4ed] px-5 py-10 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <section className="tf-hero-panel relative overflow-hidden rounded-[2rem] bg-[#123f36] px-6 py-10 text-white sm:px-10">
             <div className="tf-orbit opacity-40" />
@@ -40,6 +39,5 @@ export default function Hotels() {
           <HotelExplorer />
         </div>
       </main>
-    </Shell>
   );
 }
