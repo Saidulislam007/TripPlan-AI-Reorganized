@@ -7,10 +7,7 @@ export const metadata: Metadata = {
   title: "TripPlan AI — AI Travel Planner Bangladesh",
   description:
     "Plan practical, personalized Bangladesh trips with AI—routes, budget, food, itinerary and packing in one place.",
-  icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-  },
+  
 };
 
 export default function RootLayout({
